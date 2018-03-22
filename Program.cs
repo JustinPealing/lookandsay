@@ -27,24 +27,6 @@ namespace sayandsee
             return string.Join("", groups.Select(g => "" + g.Length + g[0]));
         }
 
-        static IEnumerable<Tuple<int, char>> SplitIntoGroups(string val)
-        {
-            int count = 1;
-            for (int i = 1; i < val.Length; i++)
-            {
-                if (i == 0 || val[i] == val[i - 1])
-                {
-                    count++;
-                }
-                else 
-                {
-                    yield return Tuple.Create(count, val[i - 1]);
-                    count = 1;
-                }
-            }
-            yield return Tuple.Create(count, val.Last());
-        }
-
         [TestMethod]
         public void SayAndSeeTest()
         {
