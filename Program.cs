@@ -20,8 +20,11 @@ namespace sayandsee
 
         static string SayAndSee(string val)
         {
-            var groups = SplitIntoGroups(val);
-            return string.Join("", groups.Select(g => "" + g.Item1 + g.Item2));
+            var groups = val
+                .Aggregate(" ", (seed, next) => seed + (seed.Last() == next ? "" : " ") + next)
+                .Trim()
+                .Split(' ');
+            return string.Join("", groups.Select(g => "" + g.Length + g[0]));
         }
 
         static IEnumerable<Tuple<int, char>> SplitIntoGroups(string val)
