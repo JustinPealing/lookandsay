@@ -4,9 +4,27 @@
     <xsl:output method="text" indent="no" />
 
     <xsl:template match="/">
-        <xsl:call-template name="sayandsee">
-            <xsl:with-param name="text" select="1121" />
+        <xsl:call-template name="loop">
+            <xsl:with-param name="text" select="1" />
+            <xsl:with-param name="count" select="10" />
         </xsl:call-template>
+    </xsl:template>
+
+    <xsl:template name="loop">
+        <xsl:param name="text" />
+        <xsl:param name="count" />
+        <xsl:value-of select="$text" />
+        <xsl:text>&#xa;</xsl:text>
+        <xsl:if test="$count > 1">
+            <xsl:call-template name="loop">
+                <xsl:with-param name="text">
+                    <xsl:call-template name="sayandsee">
+                        <xsl:with-param name="text" select="$text" />
+                    </xsl:call-template>
+                </xsl:with-param>
+                <xsl:with-param name="count" select="$count - 1" />
+            </xsl:call-template>
+        </xsl:if>
     </xsl:template>
 
     <xsl:template name="sayandsee">
