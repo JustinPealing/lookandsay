@@ -1,4 +1,4 @@
-# lookandsee
+# lookandsay
 
 My solutions to generate the ["Look-and-say" sequence](https://en.wikipedia.org/wiki/Look-and-say_sequence), e.g.
 
