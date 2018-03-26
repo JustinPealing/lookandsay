@@ -10,3 +10,9 @@ My solutions to generate the ["Look-and-say" sequence](https://en.wikipedia.org/
     312211
     13112221
     1113213211
+
+## XSLT Solution
+
+Run using any XML file as the input, e.g.
+
+    xsltproc lookandsay.xslt lookandsay.xslt
