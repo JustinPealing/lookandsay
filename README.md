@@ -11,8 +11,12 @@ My solutions to generate the ["Look-and-say" sequence](https://en.wikipedia.org/
     13112221
     1113213211
 
-## XSLT Solution
+## XSLT
 
 Run using any XML file as the input, e.g.
 
     xsltproc lookandsay.xslt lookandsay.xslt
+
+## C# / F#
+
+Run using .Net core
