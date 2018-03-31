@@ -19,4 +19,6 @@ Run using any XML file as the input, e.g.
 
 ## C# / F#
 
-Run using .Net core
+Run using .Net core, e.g.
+
+    dotnet run
